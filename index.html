@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luna Boutique | Tienda online</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="#inicio">LUNA<span>✦</span></a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+
+    <nav class="nav" id="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <button class="cart-button" id="openCart">
+      🛍 Carrito <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow">NUEVA COLECCIÓN · 2026</p>
+        <h1>Detalles que<br><em>hablan de ti.</em></h1>
+        <p>
+          Encuentra esos pequeños detalles que hacen especial cada día.
+          Accesorios seleccionados para acompañar tu estilo.
+        </p>
+        <a class="btn btn-dark" href="#catalogo">
+          Explorar colección ↗
+        </a>
+      </div>
+
+      <div class="hero-art">
+        <div class="sun"></div>
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="hero-label">SUTIL<br>Y ÚNICA</div>
+        <div class="art-ring"></div>
+        <div class="art-necklace"></div>
+        <div class="art-stone"></div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div>✦ <span>Diseños seleccionados</span></div>
+      <div>♡ <span>Compra fácil y segura</span></div>
+      <div>⌁ <span>Envíos a todo el Perú</span></div>
+    </section>
+
+    <section class="section catalog" id="catalogo">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PARA TI</p>
+          <h2>Favoritos de la temporada</h2>
+        </div>
+        <p>Piezas versátiles para regalar o regalarte.</p>
+      </div>
+
+      <div class="filters">
+        <button class="filter active" data-filter="Todos">Todos</button>
+        <button class="filter" data-filter="Collares">Collares</button>
+        <button class="filter" data-filter="Aretes">Aretes</button>
+        <button class="filter" data-filter="Pulseras">Pulseras</button>
+      </div>
+
+      <div class="products" id="products"></div>
+    </section>
+
+    <section class="about" id="nosotros">
+      <div class="about-art">
+        <div class="about-circle">L</div>
+        <span>HECHO PARA<br>BRILLAR</span>
+      </div>
+
+      <div class="about-copy">
+        <p class="eyebrow">NUESTRA ESENCIA</p>
+        <h2>Tu estilo, tus reglas.</h2>
+        <p>
+          En Luna Boutique creemos que los accesorios no solo complementan
+          un look: cuentan historias. Creamos una experiencia de compra
+          sencilla, cercana y pensada para ti.
+        </p>
+        <a class="text-link" href="#contacto">Conócenos más ↗</a>
+      </div>
+    </section>
+
+    <section class="section account-contact">
+      <div class="account-panel" id="registro">
+        <p class="eyebrow">ÚNETE A LUNA</p>
+        <h2>Crea tu cuenta</h2>
+        <p>Regístrate para recibir novedades y promociones.</p>
+
+        <form id="registerForm" class="form">
+          <label>
+            Nombre completo
+            <input name="nombre" type="text" placeholder="Tu nombre" required minlength="2">
+          </label>
+
+          <label>
+            Correo electrónico
+            <input name="correo" type="email" placeholder="tu@correo.com" required>
+          </label>
+
+          <label>
+            Contraseña
+            <input name="password" type="password" placeholder="Mínimo 6 caracteres" required minlength="6">
+          </label>
+
+          <button class="btn btn-dark" type="submit">Crear cuenta</button>
+          <p class="form-note" id="registerMessage">
+            Demo visual: los datos no se guardan en una base de datos.
+          </p>
+        </form>
+      </div>
+
+      <div class="contact-panel" id="contacto">
+        <p class="eyebrow">¿PODEMOS AYUDARTE?</p>
+        <h2>Hablemos.</h2>
+        <p>¿Tienes alguna consulta sobre un producto o pedido? Escríbenos.</p>
+
+        <form id="contactForm" class="form">
+          <label>
+            Nombre
+            <input name="nombre" type="text" placeholder="Tu nombre" required>
+          </label>
+
+          <label>
+            Correo electrónico
+            <input name="correo" type="email" placeholder="tu@correo.com" required>
+          </label>
+
+          <label>
+            Mensaje
+            <textarea name="mensaje" rows="3" placeholder="Cuéntanos cómo podemos ayudarte" required></textarea>
+          </label>
+
+          <button class="btn btn-outline" type="submit">Enviar mensaje ↗</button>
+          <p class="form-note" id="contactMessage">
+            Formulario de demostración, sin envío a servidor.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="logo" href="#inicio">LUNA<span>✦</span></a>
+    <p>Pequeños detalles, grandes historias.</p>
+    <p>© 2026 Luna Boutique · Proyecto académico de Diseño Web</p>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-head">
+      <h2>Tu carrito</h2>
+      <button id="closeCart" class="close-button" aria-label="Cerrar carrito">×</button>
+    </div>
+
+    <div id="cartItems" class="cart-items">
+      <p class="empty-cart">Tu carrito está esperando algo bonito.</p>
+    </div>
+
+    <div class="cart-bottom">
+      <div class="total-row">
+        <span>Total</span>
+        <strong id="cartTotal">S/ 0.00</strong>
+      </div>
+      <button id="checkout" class="btn btn-dark full">Continuar al pago</button>
+      <p class="form-note">Checkout simulado para fines académicos.</p>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
